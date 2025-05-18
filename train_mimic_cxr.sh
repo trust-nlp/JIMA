@@ -1,0 +1,12 @@
+nohup python main_train.py \
+--image_dir /project/wli5/JIMA/data/mimic_cxr/images/ \
+--ann_path /project/wli5/JIMA/data/mimic_cxr/annotation_label_with_filtered_tokens.json \
+--dataset_name mimic_cxr \
+--max_seq_length 100 \
+--threshold 10 \
+--batch_size 16 \
+--epochs 60 \
+--save_dir results/mimic_cxr \
+--step_size 1 \
+--gamma 0.8 \
+--seed 456789 > train_mimic.log 2>&1 &

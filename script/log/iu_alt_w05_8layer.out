@@ -1,0 +1,29 @@
+/project/wli5/conda/envs/jima/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/project/wli5/conda/envs/jima/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet101_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet101_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Starting training...
+Epoch 1/120
+alternating training for epoch 1...
+Report batches: 65, Entity batches: 65
+Report Batch [20/65] - Loss: 4.7858
+Entity Batch [20/65] - Loss: 0.4434
+Report Batch [40/65] - Loss: 4.0634
+Entity Batch [40/65] - Loss: 0.1009
+Report Batch [60/65] - Loss: 3.5158
+Entity Batch [60/65] - Loss: 0.0844
+Epoch Summary - Report Loss: 4.3420, Entity Loss: 0.2856, Total Loss: 2.2424
+Epoch 1 - Train Loss: 2.2424, Val Loss: 3.3281
+BLEU_1: 0.1148
+BLEU_2: 0.0717
+BLEU_3: 0.0503
+BLEU_4: 0.0368
+METEOR: 0.0768
+ROUGE_L: 0.2696
+entity_precision: 0.6499
+entity_recall: 0.3150
+entity_f1: 0.4243
+Saving best model with BLEU_4: 0.0368
+Epoch 2/120
+alternating training for epoch 2...
+slurmstepd: error: *** JOB 7747 ON itiger06 CANCELLED AT 2025-04-05T05:16:57 ***

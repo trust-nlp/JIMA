@@ -1,0 +1,1354 @@
+/project/wli5/conda/envs/jima/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/project/wli5/conda/envs/jima/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet101_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet101_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Starting training...
+Epoch 1/120
+Batch [20] - Report Loss: 5.0709, Entity Loss: 0.6098, Total Loss: 5.3758
+Batch [40] - Report Loss: 4.6468, Entity Loss: 0.4272, Total Loss: 4.8604
+Batch [60] - Report Loss: 4.3078, Entity Loss: 0.3133, Total Loss: 4.4644
+Epoch 1 - Train Loss: 4.3656, Val Loss: 3.2035
+BLEU_1: 0.1971
+BLEU_2: 0.1241
+BLEU_3: 0.0838
+BLEU_4: 0.0588
+METEOR: 0.1052
+ROUGE_L: 0.3113
+entity_precision: 0.6499
+entity_recall: 0.3150
+entity_f1: 0.4243
+Saving best model with BLEU_4: 0.0588
+Epoch 2/120
+Batch [20] - Report Loss: 3.1593, Entity Loss: 0.0745, Total Loss: 3.1966
+Batch [40] - Report Loss: 3.0240, Entity Loss: 0.0722, Total Loss: 3.0601
+Batch [60] - Report Loss: 2.9363, Entity Loss: 0.0713, Total Loss: 2.9719
+Epoch 2 - Train Loss: 2.9287, Val Loss: 2.6381
+BLEU_1: 0.2138
+BLEU_2: 0.1212
+BLEU_3: 0.0834
+BLEU_4: 0.0622
+METEOR: 0.0998
+ROUGE_L: 0.3031
+entity_precision: 0.6583
+entity_recall: 0.3021
+entity_f1: 0.4141
+Saving best model with BLEU_4: 0.0622
+Epoch 3/120
+Batch [20] - Report Loss: 2.5256, Entity Loss: 0.0688, Total Loss: 2.5600
+Batch [40] - Report Loss: 2.4508, Entity Loss: 0.0673, Total Loss: 2.4845
+Batch [60] - Report Loss: 2.4147, Entity Loss: 0.0669, Total Loss: 2.4482
+Epoch 3 - Train Loss: 2.4127, Val Loss: 2.4049
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6656
+entity_recall: 0.2949
+entity_f1: 0.4087
+Saving best model with BLEU_4: 0.0640
+Epoch 4/120
+Batch [20] - Report Loss: 2.1540, Entity Loss: 0.0663, Total Loss: 2.1871
+Batch [40] - Report Loss: 2.1068, Entity Loss: 0.0651, Total Loss: 2.1394
+Batch [60] - Report Loss: 2.0842, Entity Loss: 0.0650, Total Loss: 2.1167
+Epoch 4 - Train Loss: 2.0828, Val Loss: 2.2856
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6661
+entity_recall: 0.2972
+entity_f1: 0.4110
+Epoch 5/120
+Batch [20] - Report Loss: 1.8830, Entity Loss: 0.0655, Total Loss: 1.9157
+Batch [40] - Report Loss: 1.8421, Entity Loss: 0.0643, Total Loss: 1.8743
+Batch [60] - Report Loss: 1.8227, Entity Loss: 0.0640, Total Loss: 1.8548
+Epoch 5 - Train Loss: 1.8211, Val Loss: 2.2239
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6731
+entity_recall: 0.2861
+entity_f1: 0.4016
+Epoch 6/120
+Batch [20] - Report Loss: 1.6398, Entity Loss: 0.0639, Total Loss: 1.6718
+Batch [40] - Report Loss: 1.6031, Entity Loss: 0.0628, Total Loss: 1.6345
+Batch [60] - Report Loss: 1.5845, Entity Loss: 0.0626, Total Loss: 1.6158
+Epoch 6 - Train Loss: 1.5840, Val Loss: 2.2549
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6769
+entity_recall: 0.2925
+entity_f1: 0.4085
+Epoch 7/120
+Batch [20] - Report Loss: 1.4407, Entity Loss: 0.0632, Total Loss: 1.4723
+Batch [40] - Report Loss: 1.3989, Entity Loss: 0.0620, Total Loss: 1.4299
+Batch [60] - Report Loss: 1.3817, Entity Loss: 0.0619, Total Loss: 1.4126
+Epoch 7 - Train Loss: 1.3820, Val Loss: 2.1654
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6810
+entity_recall: 0.2923
+entity_f1: 0.4090
+Epoch 8/120
+Batch [20] - Report Loss: 1.2454, Entity Loss: 0.0623, Total Loss: 1.2765
+Batch [40] - Report Loss: 1.1978, Entity Loss: 0.0612, Total Loss: 1.2284
+Batch [60] - Report Loss: 1.1814, Entity Loss: 0.0612, Total Loss: 1.2119
+Epoch 8 - Train Loss: 1.1819, Val Loss: 2.2413
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6677
+entity_recall: 0.3056
+entity_f1: 0.4193
+Epoch 9/120
+Batch [20] - Report Loss: 1.0403, Entity Loss: 0.0619, Total Loss: 1.0712
+Batch [40] - Report Loss: 1.0168, Entity Loss: 0.0607, Total Loss: 1.0472
+Batch [60] - Report Loss: 1.0113, Entity Loss: 0.0605, Total Loss: 1.0416
+Epoch 9 - Train Loss: 1.0143, Val Loss: 2.3022
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6755
+entity_recall: 0.2966
+entity_f1: 0.4122
+Epoch 10/120
+Batch [20] - Report Loss: 0.8742, Entity Loss: 0.0607, Total Loss: 0.9046
+Batch [40] - Report Loss: 0.8656, Entity Loss: 0.0597, Total Loss: 0.8954
+Batch [60] - Report Loss: 0.8623, Entity Loss: 0.0596, Total Loss: 0.8921
+Epoch 10 - Train Loss: 0.8671, Val Loss: 2.4044
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6687
+entity_recall: 0.2916
+entity_f1: 0.4062
+Epoch 11/120
+Batch [20] - Report Loss: 0.7296, Entity Loss: 0.0601, Total Loss: 0.7596
+Batch [40] - Report Loss: 0.7239, Entity Loss: 0.0593, Total Loss: 0.7535
+Batch [60] - Report Loss: 0.7318, Entity Loss: 0.0593, Total Loss: 0.7614
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 1.0000
+Epoch 11 - Train Loss: 0.7406, Val Loss: 2.5847
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6708
+entity_recall: 0.2861
+entity_f1: 0.4011
+Epoch 12/120
+Batch [20] - Report Loss: 0.6128, Entity Loss: 0.0596, Total Loss: 0.6427
+Batch [40] - Report Loss: 0.6148, Entity Loss: 0.0587, Total Loss: 0.6441
+Batch [60] - Report Loss: 0.6204, Entity Loss: 0.0586, Total Loss: 0.6497
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 1.0000
+Epoch 12 - Train Loss: 0.6304, Val Loss: 2.5524
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6595
+entity_recall: 0.2906
+entity_f1: 0.4035
+Epoch 13/120
+Batch [20] - Report Loss: 0.5051, Entity Loss: 0.0586, Total Loss: 0.5344
+Batch [40] - Report Loss: 0.5008, Entity Loss: 0.0576, Total Loss: 0.5296
+Batch [60] - Report Loss: 0.5025, Entity Loss: 0.0577, Total Loss: 0.5314
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 1.0000
+Epoch 13 - Train Loss: 0.5149, Val Loss: 2.6891
+BLEU_1: 0.1987
+BLEU_2: 0.1177
+BLEU_3: 0.0833
+BLEU_4: 0.0639
+METEOR: 0.1035
+ROUGE_L: 0.2943
+entity_precision: 0.6636
+entity_recall: 0.2777
+entity_f1: 0.3916
+Epoch 14/120
+Batch [20] - Report Loss: 0.3992, Entity Loss: 0.0591, Total Loss: 0.4288
+Batch [40] - Report Loss: 0.3855, Entity Loss: 0.0577, Total Loss: 0.4144
+Batch [60] - Report Loss: 0.3860, Entity Loss: 0.0577, Total Loss: 0.4149
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.9981
+Epoch 14 - Train Loss: 0.4010, Val Loss: 2.8556
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6632
+entity_recall: 0.2749
+entity_f1: 0.3887
+Epoch 15/120
+Batch [20] - Report Loss: 2.1410, Entity Loss: 0.0618, Total Loss: 2.1719
+Batch [40] - Report Loss: 2.0723, Entity Loss: 0.0622, Total Loss: 2.1034
+Batch [60] - Report Loss: 2.0173, Entity Loss: 0.0623, Total Loss: 2.0484
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.9981
+Epoch 15 - Train Loss: 2.0433, Val Loss: 1.9367
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6677
+entity_recall: 0.3002
+entity_f1: 0.4142
+Epoch 16/120
+Batch [20] - Report Loss: 1.8190, Entity Loss: 0.0608, Total Loss: 1.8494
+Batch [40] - Report Loss: 1.7992, Entity Loss: 0.0617, Total Loss: 1.8300
+Batch [60] - Report Loss: 1.7963, Entity Loss: 0.0619, Total Loss: 1.8273
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.9945
+Epoch 16 - Train Loss: 1.8261, Val Loss: 1.8391
+BLEU_1: 0.1997
+BLEU_2: 0.1185
+BLEU_3: 0.0839
+BLEU_4: 0.0642
+METEOR: 0.1035
+ROUGE_L: 0.2946
+entity_precision: 0.6838
+entity_recall: 0.2824
+entity_f1: 0.3998
+Saving best model with BLEU_4: 0.0642
+Epoch 17/120
+Batch [20] - Report Loss: 1.7099, Entity Loss: 0.0605, Total Loss: 1.7401
+Batch [40] - Report Loss: 1.6993, Entity Loss: 0.0614, Total Loss: 1.7300
+Batch [60] - Report Loss: 1.6868, Entity Loss: 0.0611, Total Loss: 1.7173
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.9969
+Epoch 17 - Train Loss: 1.7234, Val Loss: 1.7840
+BLEU_1: 0.1991
+BLEU_2: 0.1183
+BLEU_3: 0.0837
+BLEU_4: 0.0641
+METEOR: 0.1037
+ROUGE_L: 0.2947
+entity_precision: 0.6708
+entity_recall: 0.2982
+entity_f1: 0.4129
+Epoch 18/120
+Batch [20] - Report Loss: 1.6388, Entity Loss: 0.0606, Total Loss: 1.6691
+Batch [40] - Report Loss: 1.6627, Entity Loss: 0.0610, Total Loss: 1.6932
+Batch [60] - Report Loss: 1.6299, Entity Loss: 0.0612, Total Loss: 1.6606
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.9981
+Epoch 18 - Train Loss: 1.6545, Val Loss: 1.7685
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6683
+entity_recall: 0.3007
+entity_f1: 0.4147
+Epoch 19/120
+Batch [20] - Report Loss: 1.5697, Entity Loss: 0.0600, Total Loss: 1.5997
+Batch [40] - Report Loss: 1.5740, Entity Loss: 0.0606, Total Loss: 1.6043
+Batch [60] - Report Loss: 1.5751, Entity Loss: 0.0611, Total Loss: 1.6056
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.9981
+Epoch 19 - Train Loss: 1.6063, Val Loss: 1.7277
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6639
+entity_recall: 0.2919
+entity_f1: 0.4055
+Epoch 20/120
+Batch [20] - Report Loss: 1.4977, Entity Loss: 0.0598, Total Loss: 1.5276
+Batch [40] - Report Loss: 1.5132, Entity Loss: 0.0605, Total Loss: 1.5435
+Batch [60] - Report Loss: 1.5129, Entity Loss: 0.0608, Total Loss: 1.5433
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.9981
+Epoch 20 - Train Loss: 1.5460, Val Loss: 1.7210
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6733
+entity_recall: 0.2998
+entity_f1: 0.4149
+Epoch 21/120
+Batch [20] - Report Loss: 1.4734, Entity Loss: 0.0598, Total Loss: 1.5032
+Batch [40] - Report Loss: 1.4770, Entity Loss: 0.0604, Total Loss: 1.5071
+Batch [60] - Report Loss: 1.4757, Entity Loss: 0.0607, Total Loss: 1.5060
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.4430
+Epoch 21 - Train Loss: 1.5080, Val Loss: 1.6879
+BLEU_1: 0.4130
+BLEU_2: 0.2236
+BLEU_3: 0.1435
+BLEU_4: 0.0996
+METEOR: 0.1509
+ROUGE_L: 0.3075
+entity_precision: 0.6643
+entity_recall: 0.3095
+entity_f1: 0.4222
+Saving best model with BLEU_4: 0.0996
+Epoch 22/120
+Batch [20] - Report Loss: 0.7195, Entity Loss: 0.0401, Total Loss: 0.7396
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.6013
+Epoch 22 - Train Loss: 0.7301, Val Loss: 1.7708
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6633
+entity_recall: 0.3000
+entity_f1: 0.4132
+Epoch 23/120
+Batch [20] - Report Loss: 0.8728, Entity Loss: 0.0455, Total Loss: 0.8955
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.6013
+Epoch 23 - Train Loss: 0.8907, Val Loss: 1.7421
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6631
+entity_recall: 0.3037
+entity_f1: 0.4166
+Epoch 24/120
+Batch [20] - Report Loss: 0.8293, Entity Loss: 0.0455, Total Loss: 0.8520
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.6013
+Epoch 24 - Train Loss: 0.8555, Val Loss: 1.7483
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6698
+entity_recall: 0.2947
+entity_f1: 0.4093
+Epoch 25/120
+Batch [20] - Report Loss: 0.8026, Entity Loss: 0.0458, Total Loss: 0.8255
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.6013
+Epoch 25 - Train Loss: 0.8251, Val Loss: 1.7459
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6713
+entity_recall: 0.2947
+entity_f1: 0.4096
+Epoch 26/120
+Batch [20] - Report Loss: 0.7786, Entity Loss: 0.0452, Total Loss: 0.8011
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.6013
+Epoch 26 - Train Loss: 0.7992, Val Loss: 1.7526
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6506
+entity_recall: 0.3019
+entity_f1: 0.4124
+Epoch 27/120
+Batch [20] - Report Loss: 0.7381, Entity Loss: 0.0449, Total Loss: 0.7606
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.6013
+Epoch 27 - Train Loss: 0.7707, Val Loss: 1.7644
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6477
+entity_recall: 0.3119
+entity_f1: 0.4211
+Epoch 28/120
+Batch [20] - Report Loss: 0.7230, Entity Loss: 0.0447, Total Loss: 0.7454
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.4345
+Epoch 28 - Train Loss: 0.7489, Val Loss: 1.7586
+BLEU_1: 0.3029
+BLEU_2: 0.1711
+BLEU_3: 0.1138
+BLEU_4: 0.0818
+METEOR: 0.1228
+ROUGE_L: 0.3020
+entity_precision: 0.6557
+entity_recall: 0.2927
+entity_f1: 0.4047
+Epoch 29/120
+Batch [20] - Report Loss: 0.5581, Entity Loss: 0.0382, Total Loss: 0.5772
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5289
+Epoch 29 - Train Loss: 0.5646, Val Loss: 1.8071
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6675
+entity_recall: 0.2896
+entity_f1: 0.4039
+Epoch 30/120
+Batch [20] - Report Loss: 0.6229, Entity Loss: 0.0410, Total Loss: 0.6433
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5289
+Epoch 30 - Train Loss: 0.6422, Val Loss: 1.7853
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6616
+entity_recall: 0.3093
+entity_f1: 0.4215
+Epoch 31/120
+Batch [20] - Report Loss: 0.5990, Entity Loss: 0.0406, Total Loss: 0.6193
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5390
+Epoch 31 - Train Loss: 0.6190, Val Loss: 1.8453
+BLEU_1: 0.2067
+BLEU_2: 0.1203
+BLEU_3: 0.0836
+BLEU_4: 0.0628
+METEOR: 0.1046
+ROUGE_L: 0.2906
+entity_precision: 0.6567
+entity_recall: 0.3054
+entity_f1: 0.4169
+Epoch 32/120
+Batch [20] - Report Loss: 0.6051, Entity Loss: 0.0412, Total Loss: 0.6257
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5315
+Epoch 32 - Train Loss: 0.6167, Val Loss: 1.8303
+BLEU_1: 0.2056
+BLEU_2: 0.1203
+BLEU_3: 0.0838
+BLEU_4: 0.0637
+METEOR: 0.1046
+ROUGE_L: 0.2953
+entity_precision: 0.6577
+entity_recall: 0.3047
+entity_f1: 0.4165
+Epoch 33/120
+Batch [20] - Report Loss: 0.5589, Entity Loss: 0.0409, Total Loss: 0.5794
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5152
+Epoch 33 - Train Loss: 0.5944, Val Loss: 1.8189
+BLEU_1: 0.2077
+BLEU_2: 0.1232
+BLEU_3: 0.0862
+BLEU_4: 0.0656
+METEOR: 0.1060
+ROUGE_L: 0.2982
+entity_precision: 0.6713
+entity_recall: 0.2896
+entity_f1: 0.4046
+Epoch 34/120
+Batch [20] - Report Loss: 0.5270, Entity Loss: 0.0403, Total Loss: 0.5472
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5278
+Epoch 34 - Train Loss: 0.5579, Val Loss: 1.8446
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6443
+entity_recall: 0.2814
+entity_f1: 0.3917
+Epoch 35/120
+Batch [20] - Report Loss: 0.5399, Entity Loss: 0.0409, Total Loss: 0.5603
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5278
+Epoch 35 - Train Loss: 0.5559, Val Loss: 1.8309
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6566
+entity_recall: 0.3060
+entity_f1: 0.4174
+Epoch 36/120
+Batch [20] - Report Loss: 0.5244, Entity Loss: 0.0410, Total Loss: 0.5449
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5278
+Epoch 36 - Train Loss: 0.5390, Val Loss: 1.8633
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6506
+entity_recall: 0.3002
+entity_f1: 0.4109
+Epoch 37/120
+Batch [20] - Report Loss: 0.5130, Entity Loss: 0.0407, Total Loss: 0.5334
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.5278
+Epoch 37 - Train Loss: 0.5244, Val Loss: 1.8786
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6454
+entity_recall: 0.2902
+entity_f1: 0.4004
+Epoch 38/120
+Batch [20] - Report Loss: 0.4910, Entity Loss: 0.0407, Total Loss: 0.5113
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.4875
+Epoch 38 - Train Loss: 0.5158, Val Loss: 1.9050
+BLEU_1: 0.2235
+BLEU_2: 0.1309
+BLEU_3: 0.0913
+BLEU_4: 0.0689
+METEOR: 0.1075
+ROUGE_L: 0.2961
+entity_precision: 0.6457
+entity_recall: 0.3107
+entity_f1: 0.4195
+Epoch 39/120
+Batch [20] - Report Loss: 0.4620, Entity Loss: 0.0383, Total Loss: 0.4811
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.3123
+Epoch 39 - Train Loss: 0.4844, Val Loss: 1.9009
+BLEU_1: 0.3533
+BLEU_2: 0.1984
+BLEU_3: 0.1314
+BLEU_4: 0.0937
+METEOR: 0.1368
+ROUGE_L: 0.3063
+entity_precision: 0.6289
+entity_recall: 0.3070
+entity_f1: 0.4126
+Epoch 40/120
+Batch [20] - Report Loss: 0.3663, Entity Loss: 0.0332, Total Loss: 0.3828
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.3051
+Epoch 40 - Train Loss: 0.3783, Val Loss: 1.9365
+BLEU_1: 0.3742
+BLEU_2: 0.2085
+BLEU_3: 0.1363
+BLEU_4: 0.0958
+METEOR: 0.1424
+ROUGE_L: 0.3095
+entity_precision: 0.6277
+entity_recall: 0.3144
+entity_f1: 0.4189
+Epoch 41/120
+Batch [20] - Report Loss: 0.3347, Entity Loss: 0.0321, Total Loss: 0.3507
+Batch [20] - Report Loss: 0.3347, Entity Loss: 0.0321, Total Loss: 0.3507
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.3876
+Epoch 41 - Train Loss: 0.3507, Val Loss: 1.9699
+BLEU_1: 0.2299
+BLEU_2: 0.1345
+BLEU_3: 0.0933
+BLEU_4: 0.0699
+METEOR: 0.1084
+ROUGE_L: 0.2929
+entity_precision: 0.6403
+entity_recall: 0.2962
+entity_f1: 0.4050
+Epoch 42/120
+Batch [20] - Report Loss: 0.3813, Entity Loss: 0.0345, Total Loss: 0.3986
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.3801
+Epoch 42 - Train Loss: 0.4045, Val Loss: 1.9648
+BLEU_1: 0.2268
+BLEU_2: 0.1349
+BLEU_3: 0.0942
+BLEU_4: 0.0713
+METEOR: 0.1102
+ROUGE_L: 0.2989
+entity_precision: 0.6516
+entity_recall: 0.3009
+entity_f1: 0.4116
+Epoch 43/120
+Batch [20] - Report Loss: 0.3591, Entity Loss: 0.0338, Total Loss: 0.3761
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.4008
+Epoch 43 - Train Loss: 0.3809, Val Loss: 1.9805
+BLEU_1: 0.2142
+BLEU_2: 0.1264
+BLEU_3: 0.0887
+BLEU_4: 0.0674
+METEOR: 0.1063
+ROUGE_L: 0.2963
+entity_precision: 0.6351
+entity_recall: 0.2771
+entity_f1: 0.3859
+Epoch 44/120
+Batch [20] - Report Loss: 0.3695, Entity Loss: 0.0344, Total Loss: 0.3867
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.4208
+Epoch 44 - Train Loss: 0.3902, Val Loss: 1.9787
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6343
+entity_recall: 0.2953
+entity_f1: 0.4030
+Epoch 45/120
+Batch [20] - Report Loss: 0.3783, Entity Loss: 0.0350, Total Loss: 0.3957
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.4099
+Epoch 45 - Train Loss: 0.3947, Val Loss: 1.9956
+BLEU_1: 0.2802
+BLEU_2: 0.1539
+BLEU_3: 0.0958
+BLEU_4: 0.0657
+METEOR: 0.1227
+ROUGE_L: 0.3005
+entity_precision: 0.6393
+entity_recall: 0.2822
+entity_f1: 0.3916
+Epoch 46/120
+Batch [20] - Report Loss: 0.3605, Entity Loss: 0.0347, Total Loss: 0.3778
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 46 - Train Loss: 0.3848, Val Loss: 2.0138
+BLEU_1: 0.4388
+BLEU_2: 0.2679
+BLEU_3: 0.1831
+BLEU_4: 0.1290
+METEOR: 0.1784
+ROUGE_L: 0.3408
+entity_precision: 0.6344
+entity_recall: 0.3062
+entity_f1: 0.4130
+Saving best model with BLEU_4: 0.1290
+Epoch 47/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1504
+Epoch 47 - Train Loss: 0.2213, Val Loss: 2.0647
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.6361
+entity_recall: 0.3047
+entity_f1: 0.4121
+Epoch 48/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 48 - Train Loss: 0.2462, Val Loss: 2.0826
+BLEU_1: 0.3307
+BLEU_2: 0.2080
+BLEU_3: 0.1453
+BLEU_4: 0.1087
+METEOR: 0.1475
+ROUGE_L: 0.3291
+entity_precision: 0.6008
+entity_recall: 0.2806
+entity_f1: 0.3825
+Epoch 49/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1410
+Epoch 49 - Train Loss: 0.1830, Val Loss: 2.0720
+BLEU_1: 0.1999
+BLEU_2: 0.1185
+BLEU_3: 0.0838
+BLEU_4: 0.0641
+METEOR: 0.1034
+ROUGE_L: 0.2945
+entity_precision: 0.6113
+entity_recall: 0.3119
+entity_f1: 0.4131
+Epoch 50/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 50 - Train Loss: 0.2223, Val Loss: 2.1107
+BLEU_1: 0.2980
+BLEU_2: 0.1789
+BLEU_3: 0.1237
+BLEU_4: 0.0904
+METEOR: 0.1308
+ROUGE_L: 0.3132
+entity_precision: 0.5842
+entity_recall: 0.2763
+entity_f1: 0.3752
+Epoch 51/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1194
+Epoch 51 - Train Loss: 0.1853, Val Loss: 2.1029
+BLEU_1: 0.2319
+BLEU_2: 0.1380
+BLEU_3: 0.0967
+BLEU_4: 0.0728
+METEOR: 0.1137
+ROUGE_L: 0.3015
+entity_precision: 0.5925
+entity_recall: 0.3119
+entity_f1: 0.4087
+Epoch 52/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1339
+Epoch 52 - Train Loss: 0.2011, Val Loss: 2.1098
+BLEU_1: 0.1989
+BLEU_2: 0.1180
+BLEU_3: 0.0836
+BLEU_4: 0.0640
+METEOR: 0.1035
+ROUGE_L: 0.2947
+entity_precision: 0.5924
+entity_recall: 0.3103
+entity_f1: 0.4073
+Epoch 53/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1313
+Epoch 53 - Train Loss: 0.2076, Val Loss: 2.1093
+BLEU_1: 0.2036
+BLEU_2: 0.1208
+BLEU_3: 0.0853
+BLEU_4: 0.0652
+METEOR: 0.1042
+ROUGE_L: 0.2950
+entity_precision: 0.5894
+entity_recall: 0.3029
+entity_f1: 0.4002
+Epoch 54/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1230
+Epoch 54 - Train Loss: 0.1991, Val Loss: 2.1016
+BLEU_1: 0.2182
+BLEU_2: 0.1293
+BLEU_3: 0.0911
+BLEU_4: 0.0693
+METEOR: 0.1071
+ROUGE_L: 0.2953
+entity_precision: 0.5843
+entity_recall: 0.3129
+entity_f1: 0.4076
+Epoch 55/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 55 - Train Loss: 0.1958, Val Loss: 2.1050
+BLEU_1: 0.2661
+BLEU_2: 0.1597
+BLEU_3: 0.1117
+BLEU_4: 0.0841
+METEOR: 0.1207
+ROUGE_L: 0.3028
+entity_precision: 0.5858
+entity_recall: 0.3109
+entity_f1: 0.4062
+Epoch 56/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1047
+Epoch 56 - Train Loss: 0.1738, Val Loss: 2.1070
+BLEU_1: 0.2524
+BLEU_2: 0.1513
+BLEU_3: 0.1061
+BLEU_4: 0.0801
+METEOR: 0.1171
+ROUGE_L: 0.3012
+entity_precision: 0.5858
+entity_recall: 0.3144
+entity_f1: 0.4092
+Epoch 57/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1090
+Epoch 57 - Train Loss: 0.1761, Val Loss: 2.1086
+BLEU_1: 0.2412
+BLEU_2: 0.1445
+BLEU_3: 0.1015
+BLEU_4: 0.0768
+METEOR: 0.1139
+ROUGE_L: 0.2992
+entity_precision: 0.5887
+entity_recall: 0.3105
+entity_f1: 0.4065
+Epoch 58/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 58 - Train Loss: 0.1693, Val Loss: 2.1145
+BLEU_1: 0.2635
+BLEU_2: 0.1584
+BLEU_3: 0.1110
+BLEU_4: 0.0835
+METEOR: 0.1204
+ROUGE_L: 0.3036
+entity_precision: 0.5862
+entity_recall: 0.3158
+entity_f1: 0.4105
+Epoch 59/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1140
+Epoch 59 - Train Loss: 0.1676, Val Loss: 2.1125
+BLEU_1: 0.2305
+BLEU_2: 0.1362
+BLEU_3: 0.0952
+BLEU_4: 0.0719
+METEOR: 0.1107
+ROUGE_L: 0.2963
+entity_precision: 0.5831
+entity_recall: 0.3166
+entity_f1: 0.4104
+Epoch 60/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1010
+Epoch 60 - Train Loss: 0.1856, Val Loss: 2.1130
+BLEU_1: 0.2539
+BLEU_2: 0.1514
+BLEU_3: 0.1060
+BLEU_4: 0.0800
+METEOR: 0.1168
+ROUGE_L: 0.3007
+entity_precision: 0.5804
+entity_recall: 0.3117
+entity_f1: 0.4056
+Epoch 61/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 61 - Train Loss: 0.1664, Val Loss: 2.1121
+BLEU_1: 0.3080
+BLEU_2: 0.1841
+BLEU_3: 0.1273
+BLEU_4: 0.0937
+METEOR: 0.1305
+ROUGE_L: 0.3055
+entity_precision: 0.5795
+entity_recall: 0.3209
+entity_f1: 0.4131
+Epoch 62/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 62 - Train Loss: 0.1620, Val Loss: 2.1144
+BLEU_1: 0.3504
+BLEU_2: 0.2078
+BLEU_3: 0.1419
+BLEU_4: 0.1027
+METEOR: 0.1412
+ROUGE_L: 0.3084
+entity_precision: 0.5842
+entity_recall: 0.3181
+entity_f1: 0.4119
+Epoch 63/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 63 - Train Loss: 0.1683, Val Loss: 2.1182
+BLEU_1: 0.3587
+BLEU_2: 0.2117
+BLEU_3: 0.1436
+BLEU_4: 0.1028
+METEOR: 0.1437
+ROUGE_L: 0.3086
+entity_precision: 0.5867
+entity_recall: 0.3123
+entity_f1: 0.4076
+Epoch 64/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 64 - Train Loss: 0.1626, Val Loss: 2.1165
+BLEU_1: 0.3654
+BLEU_2: 0.2171
+BLEU_3: 0.1468
+BLEU_4: 0.1051
+METEOR: 0.1477
+ROUGE_L: 0.3120
+entity_precision: 0.5810
+entity_recall: 0.3172
+entity_f1: 0.4104
+Epoch 65/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 65 - Train Loss: 0.1586, Val Loss: 2.1191
+BLEU_1: 0.3761
+BLEU_2: 0.2266
+BLEU_3: 0.1536
+BLEU_4: 0.1096
+METEOR: 0.1538
+ROUGE_L: 0.3174
+entity_precision: 0.5834
+entity_recall: 0.3115
+entity_f1: 0.4061
+Epoch 66/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 66 - Train Loss: 0.1589, Val Loss: 2.1191
+BLEU_1: 0.3886
+BLEU_2: 0.2335
+BLEU_3: 0.1574
+BLEU_4: 0.1109
+METEOR: 0.1577
+ROUGE_L: 0.3149
+entity_precision: 0.5817
+entity_recall: 0.3154
+entity_f1: 0.4090
+Epoch 67/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 67 - Train Loss: 0.1599, Val Loss: 2.1225
+BLEU_1: 0.3942
+BLEU_2: 0.2380
+BLEU_3: 0.1608
+BLEU_4: 0.1131
+METEOR: 0.1598
+ROUGE_L: 0.3163
+entity_precision: 0.5804
+entity_recall: 0.3133
+entity_f1: 0.4070
+Epoch 68/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1006
+Epoch 68 - Train Loss: 0.1554, Val Loss: 2.1276
+BLEU_1: 0.3953
+BLEU_2: 0.2374
+BLEU_3: 0.1599
+BLEU_4: 0.1124
+METEOR: 0.1585
+ROUGE_L: 0.3148
+entity_precision: 0.5785
+entity_recall: 0.3113
+entity_f1: 0.4048
+Epoch 69/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1057
+Epoch 69 - Train Loss: 0.1652, Val Loss: 2.1316
+BLEU_1: 0.3863
+BLEU_2: 0.2278
+BLEU_3: 0.1522
+BLEU_4: 0.1068
+METEOR: 0.1533
+ROUGE_L: 0.3109
+entity_precision: 0.5761
+entity_recall: 0.3074
+entity_f1: 0.4009
+Epoch 70/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1054
+Epoch 70 - Train Loss: 0.1692, Val Loss: 2.1278
+BLEU_1: 0.3902
+BLEU_2: 0.2282
+BLEU_3: 0.1517
+BLEU_4: 0.1071
+METEOR: 0.1534
+ROUGE_L: 0.3118
+entity_precision: 0.5681
+entity_recall: 0.3152
+entity_f1: 0.4054
+Epoch 71/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1069
+Epoch 71 - Train Loss: 0.1682, Val Loss: 2.1290
+BLEU_1: 0.3865
+BLEU_2: 0.2246
+BLEU_3: 0.1491
+BLEU_4: 0.1055
+METEOR: 0.1516
+ROUGE_L: 0.3093
+entity_precision: 0.5700
+entity_recall: 0.3158
+entity_f1: 0.4064
+Epoch 72/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1090
+Epoch 72 - Train Loss: 0.1706, Val Loss: 2.1338
+BLEU_1: 0.3906
+BLEU_2: 0.2253
+BLEU_3: 0.1488
+BLEU_4: 0.1035
+METEOR: 0.1528
+ROUGE_L: 0.3076
+entity_precision: 0.5765
+entity_recall: 0.3084
+entity_f1: 0.4019
+Epoch 73/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1028
+Epoch 73 - Train Loss: 0.1707, Val Loss: 2.1349
+BLEU_1: 0.4000
+BLEU_2: 0.2339
+BLEU_3: 0.1563
+BLEU_4: 0.1093
+METEOR: 0.1572
+ROUGE_L: 0.3117
+entity_precision: 0.5617
+entity_recall: 0.3160
+entity_f1: 0.4045
+Epoch 74/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1057
+Epoch 74 - Train Loss: 0.1650, Val Loss: 2.1385
+BLEU_1: 0.3842
+BLEU_2: 0.2248
+BLEU_3: 0.1509
+BLEU_4: 0.1063
+METEOR: 0.1517
+ROUGE_L: 0.3116
+entity_precision: 0.5784
+entity_recall: 0.3074
+entity_f1: 0.4014
+Epoch 75/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1166
+Epoch 75 - Train Loss: 0.1629, Val Loss: 2.1361
+BLEU_1: 0.3551
+BLEU_2: 0.2032
+BLEU_3: 0.1350
+BLEU_4: 0.0953
+METEOR: 0.1390
+ROUGE_L: 0.3021
+entity_precision: 0.5762
+entity_recall: 0.3047
+entity_f1: 0.3987
+Epoch 76/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1158
+Epoch 76 - Train Loss: 0.1754, Val Loss: 2.1382
+BLEU_1: 0.3534
+BLEU_2: 0.2030
+BLEU_3: 0.1354
+BLEU_4: 0.0960
+METEOR: 0.1386
+ROUGE_L: 0.3041
+entity_precision: 0.5747
+entity_recall: 0.2976
+entity_f1: 0.3921
+Epoch 77/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1099
+Epoch 77 - Train Loss: 0.1717, Val Loss: 2.1305
+BLEU_1: 0.3815
+BLEU_2: 0.2179
+BLEU_3: 0.1439
+BLEU_4: 0.1008
+METEOR: 0.1467
+ROUGE_L: 0.3053
+entity_precision: 0.5681
+entity_recall: 0.3123
+entity_f1: 0.4031
+Epoch 78/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1153
+Epoch 78 - Train Loss: 0.1614, Val Loss: 2.1414
+BLEU_1: 0.3724
+BLEU_2: 0.2115
+BLEU_3: 0.1385
+BLEU_4: 0.0959
+METEOR: 0.1441
+ROUGE_L: 0.3029
+entity_precision: 0.5714
+entity_recall: 0.2980
+entity_f1: 0.3917
+Epoch 79/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1053
+Epoch 79 - Train Loss: 0.1732, Val Loss: 2.1400
+BLEU_1: 0.3894
+BLEU_2: 0.2236
+BLEU_3: 0.1481
+BLEU_4: 0.1042
+METEOR: 0.1507
+ROUGE_L: 0.3067
+entity_precision: 0.5738
+entity_recall: 0.3056
+entity_f1: 0.3988
+Epoch 80/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1061
+Epoch 80 - Train Loss: 0.1604, Val Loss: 2.1361
+BLEU_1: 0.3990
+BLEU_2: 0.2273
+BLEU_3: 0.1490
+BLEU_4: 0.1034
+METEOR: 0.1537
+ROUGE_L: 0.3057
+entity_precision: 0.5754
+entity_recall: 0.3172
+entity_f1: 0.4090
+Epoch 81/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1081
+Epoch 81 - Train Loss: 0.1564, Val Loss: 2.1363
+BLEU_1: 0.3919
+BLEU_2: 0.2238
+BLEU_3: 0.1461
+BLEU_4: 0.1015
+METEOR: 0.1516
+ROUGE_L: 0.3049
+entity_precision: 0.5649
+entity_recall: 0.3154
+entity_f1: 0.4048
+Epoch 82/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 82 - Train Loss: 0.1670, Val Loss: 2.1395
+BLEU_1: 0.4031
+BLEU_2: 0.2393
+BLEU_3: 0.1593
+BLEU_4: 0.1119
+METEOR: 0.1611
+ROUGE_L: 0.3173
+entity_precision: 0.5668
+entity_recall: 0.3133
+entity_f1: 0.4036
+Epoch 83/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 83 - Train Loss: 0.1559, Val Loss: 2.1423
+BLEU_1: 0.4020
+BLEU_2: 0.2408
+BLEU_3: 0.1619
+BLEU_4: 0.1144
+METEOR: 0.1615
+ROUGE_L: 0.3188
+entity_precision: 0.5653
+entity_recall: 0.3125
+entity_f1: 0.4025
+Epoch 84/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1030
+Epoch 84 - Train Loss: 0.1535, Val Loss: 2.1432
+BLEU_1: 0.3997
+BLEU_2: 0.2355
+BLEU_3: 0.1573
+BLEU_4: 0.1109
+METEOR: 0.1583
+ROUGE_L: 0.3137
+entity_precision: 0.5683
+entity_recall: 0.3101
+entity_f1: 0.4012
+Epoch 85/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1046
+Epoch 85 - Train Loss: 0.1567, Val Loss: 2.1469
+BLEU_1: 0.4000
+BLEU_2: 0.2356
+BLEU_3: 0.1566
+BLEU_4: 0.1092
+METEOR: 0.1580
+ROUGE_L: 0.3128
+entity_precision: 0.5774
+entity_recall: 0.3054
+entity_f1: 0.3995
+Epoch 86/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1040
+Epoch 86 - Train Loss: 0.1575, Val Loss: 2.1429
+BLEU_1: 0.4077
+BLEU_2: 0.2370
+BLEU_3: 0.1581
+BLEU_4: 0.1098
+METEOR: 0.1590
+ROUGE_L: 0.3113
+entity_precision: 0.5731
+entity_recall: 0.3129
+entity_f1: 0.4048
+Epoch 87/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 87 - Train Loss: 0.1547, Val Loss: 2.1435
+BLEU_1: 0.4083
+BLEU_2: 0.2411
+BLEU_3: 0.1622
+BLEU_4: 0.1147
+METEOR: 0.1612
+ROUGE_L: 0.3143
+entity_precision: 0.5762
+entity_recall: 0.3127
+entity_f1: 0.4054
+Epoch 88/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1007
+Epoch 88 - Train Loss: 0.1539, Val Loss: 2.1438
+BLEU_1: 0.4080
+BLEU_2: 0.2406
+BLEU_3: 0.1614
+BLEU_4: 0.1139
+METEOR: 0.1606
+ROUGE_L: 0.3130
+entity_precision: 0.5752
+entity_recall: 0.3148
+entity_f1: 0.4069
+Epoch 89/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1025
+Epoch 89 - Train Loss: 0.1564, Val Loss: 2.1500
+BLEU_1: 0.4009
+BLEU_2: 0.2363
+BLEU_3: 0.1583
+BLEU_4: 0.1118
+METEOR: 0.1584
+ROUGE_L: 0.3118
+entity_precision: 0.5749
+entity_recall: 0.3095
+entity_f1: 0.4023
+Epoch 90/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1022
+Epoch 90 - Train Loss: 0.1551, Val Loss: 2.1484
+BLEU_1: 0.4047
+BLEU_2: 0.2376
+BLEU_3: 0.1588
+BLEU_4: 0.1121
+METEOR: 0.1588
+ROUGE_L: 0.3129
+entity_precision: 0.5693
+entity_recall: 0.3160
+entity_f1: 0.4064
+Epoch 91/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 91 - Train Loss: 0.1508, Val Loss: 2.1479
+BLEU_1: 0.4134
+BLEU_2: 0.2491
+BLEU_3: 0.1708
+BLEU_4: 0.1250
+METEOR: 0.1654
+ROUGE_L: 0.3288
+entity_precision: 0.5656
+entity_recall: 0.3176
+entity_f1: 0.4068
+Epoch 92/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1041
+Epoch 92 - Train Loss: 0.1487, Val Loss: 2.1483
+BLEU_1: 0.4117
+BLEU_2: 0.2453
+BLEU_3: 0.1662
+BLEU_4: 0.1198
+METEOR: 0.1627
+ROUGE_L: 0.3230
+entity_precision: 0.5670
+entity_recall: 0.3176
+entity_f1: 0.4072
+Epoch 93/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1059
+Epoch 93 - Train Loss: 0.1522, Val Loss: 2.1513
+BLEU_1: 0.4085
+BLEU_2: 0.2427
+BLEU_3: 0.1642
+BLEU_4: 0.1178
+METEOR: 0.1623
+ROUGE_L: 0.3233
+entity_precision: 0.5666
+entity_recall: 0.3107
+entity_f1: 0.4013
+Epoch 94/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1054
+Epoch 94 - Train Loss: 0.1575, Val Loss: 2.1546
+BLEU_1: 0.4115
+BLEU_2: 0.2478
+BLEU_3: 0.1672
+BLEU_4: 0.1183
+METEOR: 0.1651
+ROUGE_L: 0.3239
+entity_precision: 0.5733
+entity_recall: 0.3064
+entity_f1: 0.3994
+Epoch 95/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1018
+Epoch 95 - Train Loss: 0.1583, Val Loss: 2.1530
+BLEU_1: 0.4161
+BLEU_2: 0.2547
+BLEU_3: 0.1726
+BLEU_4: 0.1223
+METEOR: 0.1694
+ROUGE_L: 0.3287
+entity_precision: 0.5743
+entity_recall: 0.3125
+entity_f1: 0.4048
+Epoch 96/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 96 - Train Loss: 0.1505, Val Loss: 2.1574
+BLEU_1: 0.4131
+BLEU_2: 0.2547
+BLEU_3: 0.1741
+BLEU_4: 0.1246
+METEOR: 0.1685
+ROUGE_L: 0.3249
+entity_precision: 0.5803
+entity_recall: 0.3115
+entity_f1: 0.4054
+Epoch 97/120
+Computing difficulty scores for curriculum learning...
+Updated curriculum ratio: 0.1000
+Epoch 97 - Train Loss: 0.1525, Val Loss: 2.1552
+BLEU_1: 0.4133
+BLEU_2: 0.2567
+BLEU_3: 0.1766
+BLEU_4: 0.1277
+METEOR: 0.1693
+ROUGE_L: 0.3290
+entity_precision: 0.5732
+entity_recall: 0.3174
+entity_f1: 0.4086
+Validation performance didn't improve for 50 epochs. Training stops.
+Loading best model for testing...
+Test Results:
+BLEU_1: 0.4786
+BLEU_2: 0.3026
+BLEU_3: 0.2154
+BLEU_4: 0.1583
+METEOR: 0.1969
+ROUGE_L: 0.3661
+entity_precision: 0.6238
+entity_recall: 0.3271
+entity_f1: 0.4292
+Training completed!
