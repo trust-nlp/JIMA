@@ -22,13 +22,10 @@ We propose **J**oint **Im**balance **A**daptation (JIMA), a curriculum learning-
 
 ### Core Components
 - **Difficulty Measurer**: Novel ranking-based scoring mechanism using equation:
-  ```
-  k = Rank(p, p[z]) / |V|
-  ```
+  $$k = \frac{Rank(\mathbf{p}, \mathbf{p}[z])}{|V|}$$
 - **Training Scheduler**: Adaptive sample selection based on performance changes:
-  ```
-  c(s_t) = min(1, [1-(s_t-s_{t-1})/s_{t-1}] × c(s_{t-1}))
-  ```
+  $$c(s_t) = \min\left(1, \left[1-\frac{s_t-s_{t-1}}{s_{t-1}}\right] \times c(s_{t-1})\right)$$
+  
   
 ## Method Overview
 
