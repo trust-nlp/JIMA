@@ -14,7 +14,7 @@ from modules.loss import compute_loss
 from models.r2gen import R2GenMultiTaskModel
 
 def compute_rank(tensor):
-    """返回 tensor 中每个元素在降序排列中的排名（从 1 开始）"""
+    """Returns the rank (starting from 1) of each element in tensor in descending order"""
     sorted_indices = torch.argsort(tensor, descending=True)
     ranks = torch.empty_like(sorted_indices)
     ranks[sorted_indices] = torch.arange(1, len(tensor) + 1, device=tensor.device)
@@ -167,59 +167,59 @@ def parse_args():
 
 
 def main():
-    # 解析参数
+    # Parse arguments
     args = parse_args()
 
-    # 固定随机种子
+    # Fix random seed
     torch.manual_seed(args.seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
     np.random.seed(args.seed)
     
-    # 设置设备
+    # Set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # 创建目录
+    # Create directories
     os.makedirs(args.save_dir, exist_ok=True)
     os.makedirs(args.record_dir, exist_ok=True)
     
-    # 创建分词器
+    # Create tokenizer
     tokenizer = Tokenizer(args)
 
-    # 创建两个不同顺序的训练数据加载器
+    # Create two training dataloaders with different orders
     train_dataloader_report = R2DataLoader(args, tokenizer, split='train', shuffle=True, seed=args.seed)
-    train_dataloader_entity = R2DataLoader(args, tokenizer, split='train', shuffle=True, seed=args.seed+1)  # 使用不同的种子
+    train_dataloader_entity = R2DataLoader(args, tokenizer, split='train', shuffle=True, seed=args.seed+1)  # Use different seed
     
-    # 验证和测试数据加载器
+    # Validation and test dataloaders
     val_dataloader = R2DataLoader(args, tokenizer, split='val', shuffle=False)
     test_dataloader = R2DataLoader(args, tokenizer, split='test', shuffle=False)
 
-    # 构建模型
+    # Build model
     model = R2GenMultiTaskModel(args, tokenizer)
     model = model.to(device)
     
-    # 如果使用多GPU，设置DataParallel
+    # Set DataParallel if using multiple GPUs
     if args.n_gpu > 1:
         model = torch.nn.DataParallel(model)
     
-    # 获取损失函数
+    # Get loss function
     criterion = compute_loss
     
-    # 构建优化器和学习率调度器
+    # Build optimizer and learning rate scheduler
     optimizer = build_optimizer(args, model)
     lr_scheduler = build_lr_scheduler(args, optimizer)
     
-    # 设置实体损失权重
+    # Set entity loss weight
     entity_loss_weight = args.entity_weight
     
-    # 如果指定了resume，从检查点恢复
+    # Resume from checkpoint if specified
     start_epoch = 0
     best_score = float('-inf') if args.monitor_mode == 'max' else float('inf')
     not_improved_count = 0
     
     curriculum_ratio = 1.0
     c_prev = 1.0
-    s_t_prev = None  # 用于保存上一轮性能
+    s_t_prev = None  # For storing previous performance
     report_diff = None
     entity_diff = None
     warm_up_round = 10
@@ -235,26 +235,26 @@ def main():
         lr_scheduler.load_state_dict(checkpoint['lr_scheduler'])
         print(f"Checkpoint loaded. Resume training from epoch {start_epoch}")
     
-    # 训练循环
+    # Training loop
     print("Starting training...")
     for epoch in range(start_epoch, args.epochs):
         print(f"Epoch {epoch+1}/{args.epochs}")
         
-        # 使用 curriculum_ratio 构建 dataloader（每轮重新构建）
-        # 每一轮根据当前 curriculum_ratio 创建 dataloader
+        # Use curriculum_ratio to build dataloader (rebuild each round)
+        # Each round creates dataloader based on current curriculum_ratio
         train_dataloader_report = R2DataLoader(
             args, tokenizer, split='train', shuffle=True,
-            seed=args.seed, curriculum_ratio=curriculum_ratio,  # 用 task2 难度
+            seed=args.seed, curriculum_ratio=curriculum_ratio,  # Use task2 difficulty
             difficulty_scores=report_diff if epoch+2 > warm_up_round else None
         )
         train_dataloader_entity = R2DataLoader(
             args, tokenizer, split='train', shuffle=True,
-            seed=args.seed + 1, curriculum_ratio=curriculum_ratio,  # 用 task1 难度
+            seed=args.seed + 1, curriculum_ratio=curriculum_ratio,  # Use task1 difficulty
             difficulty_scores=entity_diff if epoch+2 > warm_up_round else None
         )
 
 
-        # 训练一个epoch
+        # Train one epoch
         if not args.joint:
             print(f'alternating training for epoch {epoch+1}...')
             train_losses = train_epoch_alternating(
@@ -277,7 +277,7 @@ def main():
                 entity_loss_weight
             )
         
-        # 验证
+        # Validate
         val_losses, val_metrics = validate(
             model, 
             val_dataloader, 
@@ -287,19 +287,19 @@ def main():
             entity_loss_weight
         )
         
-        ### Curriculum 控制逻辑（从第10轮开始）
+        ### Curriculum control logic (from 10th round onwards)
         if epoch+1 > warm_up_round:
             print("Computing difficulty scores for curriculum learning...")
 
-            # 用完整训练集计算 difficulty
+            # Use full training set to calculate difficulty
             full_train_loader = R2DataLoader(args, tokenizer, split='train', shuffle=False, seed=args.seed)
             entity_diff = compute_entity_difficulty(model, full_train_loader, tokenizer, device)
             report_diff = compute_report_difficulty(model, full_train_loader, tokenizer, device)
 
-            # 当前性能（平均 BLEU 或 entity_f1）
+            # Current performance (average BLEU or entity_f1)
             s_t = val_metrics.get(args.monitor_metric, 0)
 
-            # 更新 curriculum_ratio
+            # Update curriculum_ratio
             if s_t_prev is not None:
                 curriculum_ratio = update_curriculum_ratio(s_t, s_t_prev, c_prev)
                 c_prev = curriculum_ratio
@@ -307,15 +307,15 @@ def main():
 
             print(f"Updated curriculum ratio: {curriculum_ratio:.4f}")
 
-        # 学习率调度
+        # Learning rate scheduler
         lr_scheduler.step()
         
-        # 记录日志
+        # Record log
         print(f"Epoch {epoch+1} - Train Loss: {train_losses['total_loss']:.4f}, Val Loss: {val_losses['total_loss']:.4f}")
         for k, v in val_metrics.items():
             print(f"{k}: {v:.4f}")
         
-        # 检查是否需要保存模型
+        # Check if need to save model
         if args.monitor_mode == 'max':
             is_improved = (val_metrics.get(args.monitor_metric, 0) > best_score)
         else:
@@ -325,7 +325,7 @@ def main():
             best_score = val_metrics.get(args.monitor_metric, best_score)
             not_improved_count = 0
             
-            # 保存最佳模型
+            # Save best model
             state_dict = model.module.state_dict() if args.n_gpu > 1 else model.state_dict()
             torch.save({
                 'epoch': epoch,
@@ -339,7 +339,7 @@ def main():
         else:
             not_improved_count += 1
         
-        # 定期保存模型
+        # Periodically save model
         if (epoch + 1) % args.save_period == 0:
             state_dict = model.module.state_dict() if args.n_gpu > 1 else model.state_dict()
             torch.save({
@@ -351,12 +351,12 @@ def main():
                 'not_improved_count': not_improved_count
             }, os.path.join(args.save_dir, f'model_epoch_{epoch+1}.pth'))
         
-        # 早停
+        # Early stop
         if not_improved_count > args.early_stop:
             print(f"Validation performance didn\'t improve for {args.early_stop} epochs. Training stops.")
             break
     
-    # 测试最佳模型
+    # Test best model
     print("Loading best model for testing...")
     checkpoint = torch.load(os.path.join(args.save_dir, 'model_best.pth'))
     if args.n_gpu > 1:
@@ -373,7 +373,7 @@ def main():
 
 
 def train_epoch_alternating(model, train_dataloader_report, train_dataloader_entity, optimizer, criterion, device, entity_loss_weight):
-    """训练一个epoch，交替使用报告生成和实体预测任务的批次"""
+    """Train one epoch by alternating between report generation and entity prediction tasks"""
     model.train()
     
     total_report_loss = 0
@@ -382,109 +382,109 @@ def train_epoch_alternating(model, train_dataloader_report, train_dataloader_ent
     report_batches = 0
     entity_batches = 0
     
-    # 获取两个任务的迭代器
+    # Get iterators for both tasks
     report_iter = iter(train_dataloader_report)
     entity_iter = iter(train_dataloader_entity)
     
-    # 记录两个数据加载器是否已用完
+    # Track if data loaders are exhausted
     report_exhausted = False
     entity_exhausted = False
     
-    # 计算较长的数据加载器的长度作为基准
+    # Calculate length of longer dataloader as baseline
     max_batches = max(len(train_dataloader_report), len(train_dataloader_entity))
     report_size = len(train_dataloader_report)
     entity_size = len(train_dataloader_entity)
     
     print(f"Report batches: {report_size}, Entity batches: {entity_size}")
     
-    # 交替使用两个任务的批次，确保两个任务都能完整训练
+    # Alternate between tasks, ensuring complete training for both
     batch_idx = 0
-    while batch_idx < 2 * max_batches:  # 确保循环足够长以处理所有数据
-        # 如果两个任务都已经用完数据，则结束循环
+    while batch_idx < 2 * max_batches:  # Ensure loop is long enough to process all data
+        # End loop if both tasks have exhausted their data
         if report_exhausted and entity_exhausted:
             break
             
-        # 偶数批次处理报告生成任务
+        # Process report generation task on even batches
         if batch_idx % 2 == 0 and not report_exhausted:
             try:
-                # 报告生成任务
+                # Report generation task
                 images_id, images, reports_ids, reports_masks, _ = next(report_iter)
                 images = images.to(device)
                 reports_ids = reports_ids.to(device)
                 reports_masks = reports_masks.to(device)
                 
-                # 前向传播
+                # Forward pass
                 output = model(images, reports_ids, mode='train', task='report')
                 
-                # 计算损失
+                # Calculate loss
                 report_loss = criterion(output, reports_ids, reports_masks)
                 
-                # 反向传播和优化
+                # Backward pass and optimization
                 optimizer.zero_grad()
                 report_loss.backward()
                 torch.nn.utils.clip_grad_value_(model.parameters(), 0.1)
                 optimizer.step()
                 
-                # 累计损失
+                # Accumulate loss
                 total_report_loss += report_loss.item()
                 total_loss += report_loss.item()
                 report_batches += 1
                 
-                # 输出进度
+                # Output progress
                 if report_batches % 20 == 0:
                     print(f"Report Batch [{report_batches}/{report_size}] - Loss: {report_loss.item():.4f}")
                     
             except StopIteration:
-                # 如果报告生成数据已经用完，标记为耗尽
+                # Mark report generation data as exhausted
                 report_exhausted = True
                 print("Report task data exhausted.")
         
-        # 奇数批次处理实体预测任务
+        # Process entity prediction task on odd batches
         elif batch_idx % 2 == 1 and not entity_exhausted:
             try:
-                # 实体预测任务
+                # Entity prediction task
                 images_id, images, _, _, entity_targets = next(entity_iter)
                 images = images.to(device)
                 entity_targets = entity_targets.to(device)
                 
-                # 前向传播
+                # Forward pass
                 entity_logits = model(images, mode='train', task='entity')
                 
-                # 计算损失
+                # Calculate loss
                 entity_loss = compute_entity_loss(entity_logits, entity_targets)
                 weighted_entity_loss = entity_loss_weight * entity_loss
                 
-                # 反向传播和优化
+                # Backward pass and optimization
                 optimizer.zero_grad()
                 weighted_entity_loss.backward()
                 torch.nn.utils.clip_grad_value_(model.parameters(), 0.1)
                 optimizer.step()
                 
-                # 累计损失
+                # Accumulate loss
                 total_entity_loss += entity_loss.item()
                 total_loss += weighted_entity_loss.item()
                 entity_batches += 1
                 
-                # 输出进度
+                # Output progress
                 if entity_batches % 20 == 0:
                     print(f"Entity Batch [{entity_batches}/{entity_size}] - Loss: {entity_loss.item():.4f}")
                     
             except StopIteration:
-                # 如果实体预测数据已经用完，标记为耗尽
+                # Mark entity prediction data as exhausted
                 entity_exhausted = True
                 print("Entity task data exhausted.")
         
-        # 增加批次计数
+        # Increment batch counter
         batch_idx += 1
     
-    # 计算平均损失
+    # Calculate average losses
     avg_report_loss = total_report_loss / max(1, report_batches)
     avg_entity_loss = total_entity_loss / max(1, entity_batches)
     avg_total_loss = total_loss / max(1, report_batches + entity_batches)
     
     print(f"Epoch Summary - Report Loss: {avg_report_loss:.4f}, Entity Loss: {avg_entity_loss:.4f}, Total Loss: {avg_total_loss:.4f}")
     
-    # 确保返回字典含有所需的键
+    # Return dictionary with required keys
     return {
         'report_loss': avg_report_loss,
         'entity_loss': avg_entity_loss,
@@ -500,11 +500,11 @@ def train_epoch_joint(model, train_dataloader_report, train_dataloader_entity, o
     total_loss = 0
     num_batches = 0
 
-    # 获取两个任务的迭代器
+    # Get iterators for both tasks
     report_iter = iter(train_dataloader_report)
     entity_iter = iter(train_dataloader_entity)
 
-    # 记录两个数据加载器是否已用完
+    # Track if data loaders are exhausted
     report_exhausted = False
     entity_exhausted = False
 
@@ -512,7 +512,7 @@ def train_epoch_joint(model, train_dataloader_report, train_dataloader_entity, o
         optimizer.zero_grad()
         batch_loss = 0
         
-        # 处理报告生成任务
+        # Process report generation task
         if not report_exhausted:
             try:
                 images_id, images, reports_ids, reports_masks, _ = next(report_iter)
@@ -520,10 +520,10 @@ def train_epoch_joint(model, train_dataloader_report, train_dataloader_entity, o
                 reports_ids = reports_ids.to(device)
                 reports_masks = reports_masks.to(device)
                 
-                # 前向传播
+                # Forward pass
                 output = model(images, reports_ids, mode='train', task='report')
                 
-                # 计算损失
+                # Calculate loss
                 report_loss = criterion(output, reports_ids, reports_masks)
                 batch_loss += report_loss
                 total_report_loss += report_loss.item()
@@ -531,17 +531,17 @@ def train_epoch_joint(model, train_dataloader_report, train_dataloader_entity, o
             except StopIteration:
                 report_exhausted = True
         
-        # 处理实体预测任务
+        # Process entity prediction task
         if not entity_exhausted:
             try:
                 images_id, images, _, _, entity_targets = next(entity_iter)
                 images = images.to(device)
                 entity_targets = entity_targets.to(device)
                 
-                # 前向传播
+                # Forward pass
                 entity_logits = model(images, mode='train', task='entity')
                 
-                # 计算损失
+                # Calculate loss
                 entity_loss = compute_entity_loss(entity_logits, entity_targets)
                 weighted_entity_loss = entity_loss_weight * entity_loss
                 batch_loss += weighted_entity_loss
@@ -550,22 +550,22 @@ def train_epoch_joint(model, train_dataloader_report, train_dataloader_entity, o
             except StopIteration:
                 entity_exhausted = True
         
-        # 反向传播和优化
+        # Backward pass and optimization
         if batch_loss > 0:
             batch_loss.backward()
-            # 梯度裁剪
+            # Gradient clipping
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             optimizer.step()
             total_loss += batch_loss.item()
             num_batches += 1
         
-        # 输出进度
+        # Output progress
         if num_batches % 20 == 0:
             print(f"Batch [{num_batches}] - Report Loss: {total_report_loss/max(1,num_batches):.4f}, "
                     f"Entity Loss: {total_entity_loss/max(1,num_batches):.4f}, "
                     f"Total Loss: {total_loss/max(1,num_batches):.4f}")
 
-    # 计算平均损失
+    # Calculate average losses
     avg_report_loss = total_report_loss / max(1, num_batches)
     avg_entity_loss = total_entity_loss / max(1, num_batches)
     avg_total_loss = total_loss / max(1, num_batches)
@@ -579,7 +579,7 @@ def train_epoch_joint(model, train_dataloader_report, train_dataloader_entity, o
                
         
 def validate(model, dataloader, criterion, tokenizer, device, entity_loss_weight):
-    """验证模型性能"""
+    """Validate model performance"""
     model.eval()
     
     total_report_loss = 0
@@ -598,7 +598,7 @@ def validate(model, dataloader, criterion, tokenizer, device, entity_loss_weight
             reports_masks = reports_masks.to(device)
             entity_targets = entity_targets.to(device)
             
-            # 生成报告
+            # Generate reports
             output = model(images, mode='sample')
             reports = tokenizer.decode_batch(output.cpu().numpy())
             ground_truths = tokenizer.decode_batch(reports_ids[:, 1:].cpu().numpy())
@@ -606,41 +606,41 @@ def validate(model, dataloader, criterion, tokenizer, device, entity_loss_weight
             all_reports.extend(reports)
             all_ground_truths.extend(ground_truths)
             
-            # 实体预测
+            # Entity prediction
             entity_logits = model(images, mode='sample', task='entity')
             all_entity_logits.append(entity_logits.cpu())
             all_entity_targets.append(entity_targets.cpu())
             
-            # 计算报告生成损失（使用训练模式以便计算损失）
+            # Calculate report generation loss (using training mode for loss calculation)
             output_for_loss = model(images, reports_ids, mode='train', task='report')
             report_loss = criterion(output_for_loss, reports_ids, reports_masks)
             
-            # 计算实体预测损失
+            # Calculate entity prediction loss
             entity_loss = compute_entity_loss(entity_logits, entity_targets)
             
-            # 计算总损失
+            # Calculate total loss
             total_loss_batch = report_loss + entity_loss_weight * entity_loss
             
-            # 累计损失
+            # Accumulate losses
             total_report_loss += report_loss.item()
             total_entity_loss += entity_loss.item()
             total_loss += total_loss_batch.item()
     
-    # 计算平均损失
+    # Calculate average losses
     avg_report_loss = total_report_loss / len(dataloader)
     avg_entity_loss = total_entity_loss / len(dataloader)
     avg_total_loss = total_loss / len(dataloader)
     
-    # 计算报告生成指标
+    # Calculate report generation metrics
     reports_metrics = compute_scores({i: [gt] for i, gt in enumerate(all_ground_truths)},
                                    {i: [re] for i, re in enumerate(all_reports)})
     
-    # 计算实体预测指标
+    # Calculate entity prediction metrics
     all_entity_logits = torch.cat(all_entity_logits, dim=0)
     all_entity_targets = torch.cat(all_entity_targets, dim=0)
     entity_preds = (torch.sigmoid(all_entity_logits) > 0.5).float()
     
-    # 计算简单的F1分数
+    # Calculate simple F1 score
     tp = (entity_preds * all_entity_targets).sum(dim=0)
     fp = (entity_preds * (1 - all_entity_targets)).sum(dim=0)
     fn = ((1 - entity_preds) * all_entity_targets).sum(dim=0)
@@ -649,14 +649,14 @@ def validate(model, dataloader, criterion, tokenizer, device, entity_loss_weight
     recall = tp.sum() / (tp.sum() + fn.sum() + 1e-10)
     f1 = 2 * precision * recall / (precision + recall + 1e-10)
     
-    # 添加实体预测指标
+    # Add entity prediction metrics
     entity_metrics = {
         'entity_precision': precision.item(),
         'entity_recall': recall.item(),
         'entity_f1': f1.item()
     }
     
-    # 合并指标
+    # Merge metrics
     metrics = {**reports_metrics, **entity_metrics}
     
     return {

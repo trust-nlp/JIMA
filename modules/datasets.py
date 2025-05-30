@@ -26,7 +26,7 @@ class BaseDataset(Dataset):
             self.examples[i]['difficulty'] = 0.0
     def set_difficulty_scores(self, difficulty_dict):
         """
-        外部接口：设置每个样本的 difficulty 分数（由 image_id 索引）
+        External interface: Set difficulty scores for each sample (indexed by image_id)
         """
         for example in self.examples:
             image_id = example['id']
@@ -35,13 +35,13 @@ class BaseDataset(Dataset):
 
     def sort_by_difficulty(self):
         """
-        将样本按 difficulty 升序排序（越容易排在越前面）
+        Sort samples by difficulty in ascending order (easier samples first)
         """
         self.examples.sort(key=lambda x: x['difficulty'])
 
     def filter_by_curriculum_ratio(self, ratio):
         """
-        保留前 ratio 百分比的样本
+        Keep the first ratio percent of samples
         """
         num = int(len(self.examples) * ratio)
         self.examples = self.examples[:max(1, num)]

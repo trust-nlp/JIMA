@@ -7,7 +7,7 @@ from .datasets import IuxrayMultiImageDataset, MimiccxrSingleImageDataset
 
 class R2DataLoader(DataLoader):
     def __init__(self, args, tokenizer, split, shuffle, seed=None, curriculum_ratio=1.0, difficulty_scores=None):
-        # 如果提供了种子，设置随机数种子
+        # Set random seed if provided
         if seed is not None and shuffle:
             torch.manual_seed(seed)
             np.random.seed(seed)
@@ -41,17 +41,16 @@ class R2DataLoader(DataLoader):
         else:
             self.dataset = MimiccxrSingleImageDataset(self.args, self.tokenizer, self.split, transform=self.transform)
 
-        # 如果提供了 difficulty_scores，则设置难度
+        # If difficulty_scores are provided, set difficulty
         if difficulty_scores is not None:
             self.dataset.set_difficulty_scores(difficulty_scores)
 
-        # curriculum_ratio < 1 时启用 curriculum learning
+        # curriculum_ratio < 1 enables curriculum learning
         if curriculum_ratio < 1.0 and split == 'train':
             self.dataset.sort_by_difficulty()
             self.dataset.filter_by_curriculum_ratio(curriculum_ratio)
 
-
-        # 保存词典大小为类变量
+        # Save vocabulary size as class variable
         R2DataLoader.vocab_size = tokenizer.get_vocab_size()
         # print(R2DataLoader.vocab_size)
 
@@ -73,10 +72,10 @@ class R2DataLoader(DataLoader):
         targets = np.zeros((len(reports_ids), max_seq_length), dtype=int)
         targets_masks = np.zeros((len(reports_ids), max_seq_length), dtype=int)
         
-        # 使用类变量词典大小
+        # Use class variable vocabulary size
         vocab_size = R2DataLoader.vocab_size
         
-        # 创建多热向量表示
+        # Create multi-hot vector representation
         batch_entity_multihot = np.zeros((len(entity_ids), vocab_size), dtype=float)
 
         for i, report_ids in enumerate(reports_ids):
@@ -85,10 +84,10 @@ class R2DataLoader(DataLoader):
         for i, report_masks in enumerate(reports_masks):
             targets_masks[i, :len(report_masks)] = report_masks
         
-        # 将entity_ids转换为多热向量,我们的tokenizer目前并没有0这个token，所以计算loss的时候entity_id 要-1 
+        # Convert entity_ids to multi-hot vector. Our tokenizer currently doesn't have token 0, so entity_id needs to be -1 when computing loss
         for i, entities in enumerate(entity_ids):
             for entity_id in entities:
-                if entity_id > 0:  # 避免填充token
+                if entity_id > 0:  # Avoid padding tokens
                     batch_entity_multihot[i, entity_id-1] = 1.0
 
         return images_id, images, torch.LongTensor(targets), torch.FloatTensor(targets_masks), torch.FloatTensor(batch_entity_multihot)
