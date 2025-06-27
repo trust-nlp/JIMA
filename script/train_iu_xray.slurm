@@ -6,8 +6,8 @@
 #SBATCH -t 48:00:00             # Maximum runtime (HH:MM:SS)
 #SBATCH -N 1                         # Number of nodes
 #SBATCH --gres=gpu:rtx_6000       # Request k A6000 GPUs
-#SBATCH --cpus-per-task=8      # 每个任务分配16个CPU核心 <<< 核心参数
-#SBATCH --ntasks-per-node=1     # 单节点任务数固定为1
+#SBATCH --cpus-per-task=8
+#SBATCH --ntasks-per-node=1
 
 # Activate the conda environment
 source ~/miniconda3/bin/activate jima
@@ -29,3 +29,4 @@ python $base_dir/main_train.py \
 --num_layers 6 \
 --beam_size 5 \
 --dropout 0.1 
+# --joint  # joint training, otherwise alternating training

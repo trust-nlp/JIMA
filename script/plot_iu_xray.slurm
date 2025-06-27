@@ -1,0 +1,14 @@
+python main_plot.py \
+--image_dir /project/wli5/JIMA/data/iu_xray/images/ \
+--ann_path /project/wli5/JIMA/data/iu_xray/annotation.json \
+--dataset_name iu_xray \
+--max_seq_length 100 \
+--threshold 10 \
+--batch_size 1 \
+--epochs 30 \
+--save_dir results/iu_xray \
+--step_size 1 \
+--gamma 0.8 \
+--seed 456789 \
+--beam_size 1 \
+--load /project/wli5/JIMA/data/model_iu_xray.pth
