@@ -59,11 +59,12 @@ Python 3.10, PyTorch 2.6, CUDA-enabled GPU recommended
 2. **Data Availability**:
    - Download IU X-ray dataset from [OpenI](https://openi.nlm.nih.gov/)
    - Download MIMIC-CXR dataset from [PhysioNet](https://physionet.org/content/mimic-cxr/)
-   - Follow data preprocessing steps in `modules/datasets.py`
+   - Add entities to the datasets using `RadGraph-preprocess.py`
+
 
 3. **Model Training**:
 
-   **Note: Repalce the file_path OR dataset_name in ``script/train_iu_xray.slurm`` with your actual path.**
+   **Note: Replace the file_path OR dataset_name in ``script/train_iu_xray.slurm`` with your actual path.**
    ```bash
    # Joint training (recommended)
    cd script/
