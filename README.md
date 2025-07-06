@@ -7,12 +7,13 @@ Source codes for our paper "Joint Imbalance Adaptation for Radiology Report Gene
 Please cite our work as:
 
 ```bibtex
-@article{li2024jima,
+@article{li2025joint,
   title={Joint Imbalance Adaptation for Radiology Report Generation},
-  author={Li, Wang and Han, Guangzeng and Wu, Yuexin and Huang, I-Chan and Huang, Xiaolei},
-  journal={[Journal Name]},
-  year={2024},
-  note={Under Review}
+  author={Li, Wang and Han, Guangzeng and Wu, Yuexin and Huang, I.-Chan and Huang, Xiaolei},
+  journal={Journal of Healthcare Informatics Research},
+  pages={1--23},
+  year={2025},
+  publisher={Springer}
 }
 ```
 
