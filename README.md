@@ -56,7 +56,7 @@ Python 3.10, PyTorch 2.6, CUDA-enabled GPU recommended
 
    See ``requirements.txt``.
 
-2. **Data Availability**:
+2. **Data Preprocessing**:
    - Download IU X-ray dataset from [OpenI](https://openi.nlm.nih.gov/)
    - Download MIMIC-CXR dataset from [PhysioNet](https://physionet.org/content/mimic-cxr/)
    - Add entities to the datasets using `RadGraph-preprocess.py`
