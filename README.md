@@ -13,7 +13,9 @@ Please cite our work as:
   journal={Journal of Healthcare Informatics Research},
   pages={1--23},
   year={2025},
-  publisher={Springer}
+  publisher={Springer},
+  doi={10.1007/s41666-025-00205-9},
+  url={https://link.springer.com/article/10.1007/s41666-025-00205-9}
 }
 ```
 
